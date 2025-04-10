@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const User = require('./User');
 
 // Middleware pour vérifier si l'utilisateur est administrateur
 const verifyAdmin = async (req, res, next) => {
