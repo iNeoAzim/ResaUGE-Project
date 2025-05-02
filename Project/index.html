@@ -6,47 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../Project/Code/style.css">
-    <title>Modern Login Page - Université Eiffel</title>
+    <title>Modern Login Page</title>
 </head>
 
-<body id="page1">
+<body>
 
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
-                <h1>Create Account</h1>
-                <span>or use your email for registeration</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Sign Up</button>
-            </form>
-        </div>
-        <div class="form-container sign-in">
-            <form>
-                <h1>Sign In</h1>
-                <span>or use your email password</span>
-                <select name="role" id="role">
+                <h1>Créer un compte</h1>
+                <span>ou utiliser un email pour l'inscription</span>
+                <input type="text" placeholder="Nom" id="register-name">
+                <input type="text" placeholder="Prénom" id="register-firstname">
+                <input type="email" placeholder="Email" id="register-email">
+                <input type="password" placeholder="Mot de passe" id="register-password">
+                <input type="pseudo" placeholder="Pseudo" id="register-pseudo">
+                <input type="Postal" placeholder="Code Postal" id="register-postal">
+                <input type="birthdate" placeholder="Date de naissance" id="register-birthdate">
+                <select name="role" id="register-role">
                     <option value="student">Etudiant</option>
                     <option value="teacher">Enseignant</option>
                     <option value="agent">Agent</option>
                     <option value="admin">Admin</option>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <button>Sign In</button> <link rel="stylesheet" href="./Users/student.html">
+                </select>
+                <button>S'inscrire</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Se connecter</h1>
+                <span>ou utiliser le mot de passe </span>
+                <select name="role" id="login-role">
+                    <option value="student">Etudiant</option>
+                    <option value="teacher">Enseignant</option>
+                    <option value="agent">Agent</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <input type="email" placeholder="Email" id="login-email">
+                <input type="password" placeholder="Mot de passe" id="login-password">
+                <a href="#">Mot de passe oublié?</a>
+                <button>Se connecter</button> <link rel="stylesheet" href="./Users/student.html">
             </form>
         </div>
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
-                    <h1>Ravi de te revoir {username}!</h1>
-                    <p>Saisissez vos données personnelles pour profiter pleinement de toutes les fonctionnalités du site.</p>
-                    <button class="hidden" id="login">Sign In</button>
+                    <h1>Ravi de te revoir !</h1>
+                    <p id="role-description-login">Saisissez vos données personnelles pour profiter pleinement de toutes les fonctionnalités du service.</p>
+                    <button class="hidden" id="login">Se connecter</button>
                 </div>
                 <div class="toggle-panel toggle-right">
-                    <h1>Bonjour,{username}</h1>
-                    <p>Register with your personal details to use all of site features</p>
+                    <h1>Bienvenue !</h1>
+                    <p id="role-description-register">Connectez vous avec vos informations de connexion pour accéder à toutes les fonctionnalités du service.</p>
                     <button class="hidden" id="register">S'inscrire</button>
                 </div>
             </div>
@@ -55,5 +66,4 @@
 
     <script src="../Project/Code/script.js"></script>
 </body>
-
 </html>

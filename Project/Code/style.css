@@ -7,7 +7,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-#page1 body{
+body{
     background-color: #c9d6ff;
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     display: flex;
@@ -17,47 +17,48 @@
     height: 100vh;
 }
 
-#page1 .container{
+.container{
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 1800px;
+    height: 900px;
     max-width: 100%;
-    min-height: 480px;
 }
 
-#page1 .container p{
+.container p{
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
 }
 
-#page1 .container span{
+.container span{
     font-size: 12px;
 }
 
 #page1 .container a{
     color: #333;
-    font-size: 13px;
+    font-size: 20px;
     text-decoration: none;
     margin: 15px 0 10px;
 }
 
 #page1 .container button{
     background-color: #512da8;
-    color: #fff;
-    font-size: 12px;
+    color: white;
+    font-size: 25px;
     padding: 10px 45px;
     border: 1px solid transparent;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 #page1 .container button.hidden{
@@ -65,7 +66,7 @@
     border-color: #fff;
 }
 
-#page1 .container form{
+.container form{
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -78,12 +79,63 @@
 #page1 .container input{
     background-color: #eee;
     border: none;
-    margin: 8px 0;
-    padding: 10px 15px;
-    font-size: 13px;
+    margin: 10px 0;
+    padding: 20px 20px;
+    font-size: 20px;
     border-radius: 8px;
     width: 100%;
     outline: none;
+    text-align: center;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#login-email{
+    background-image: url("/img/arobase.png");
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 20px;
+}
+#login-password{
+    background-image: url("/img/cadenas-verrouille.png");
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 20px;
+}
+#register-email{
+    background-image: url("/img/arobase.png");
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 20px;
+}
+#register-password{
+    background-image: url("/img/cadenas-verrouille.png");
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 20px;
+}
+#register-name, #register-firstname{
+    background-image: url("/img/nom.png");
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 20px;
+}
+#register-birthdate{
+    background-image: url("/img/gateau.png");
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 30px;
+}
+#register-postal{
+    background-image: url("/img/emplacement.png");
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 20px;
+}
+#register-pseudo{
+    background-image: url("/img/pseudo.png");
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 20px;
 }
 
 #page1 .form-container{
@@ -207,110 +259,4 @@
 
 #page1 .container.active .toggle-right{
     transform: translateX(200%);
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
-
-/* page test */
-#page0 {
-    font-family: 'Noto Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #FFFFFF; 
-    color: #333;
-}
-
-#page0 h2 {
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
-    color: #000000; 
-}
-
-
-#page0 header {
-    background-color: #005e55; 
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-#page0 nav {
-    background-color: #005e55; 
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-#page0 nav a {
-    color: white;
-    text-decoration: none;
-    padding: 15px 25px;
-    margin: 0 20px;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-}
-
-#page0 nav a:hover {
-    background-color: #000000; 
-}
-
-
-#page0 .main-content {
-    padding: 40px 10%;
-    text-align: center;
-}
-
-#page0 .main-content h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-}
-
-
-#page0 .course-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-#page0 .course-card {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#page0 .course-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-#page0 .course-card img {
-    width: 100%;
-    border-radius: 8px;
-    height: 200px;
-    object-fit: cover;
-}
-
-#page0 .course-card h3 {
-    margin-top: 20px;
-    font-size: 1.8em;
-    color: #000000; 
-}
-
-#page0 .course-card p {
-    font-size: 16px;
-    color: #555;
-}
-
-
-#page0 footer {
-    background-color: #005e55; 
-    color: white;
-    padding: 20px 0;
-    text-align: center;
 }
