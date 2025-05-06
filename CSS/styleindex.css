@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-#page1 *{
+#login-page *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,23 +8,36 @@
 }
 
 body{
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: linear-gradient(-45deg, #005e55, #35c8b0, #2f2a85, #27306e);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     height: 100vh;
 }
 
+@keyframes gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
 .container{
-    background-color: #fff;
+    background-color: whitesmoke;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 1800px;
-    height: 900px;
+    width: 900px;
+    height: 600px;
     max-width: 100%;
 }
 
@@ -39,17 +52,25 @@ body{
     font-size: 12px;
 }
 
-#page1 .container a{
+#login-page .container a{
     color: #333;
-    font-size: 20px;
+    font-size: 10px;
     text-decoration: none;
     margin: 15px 0 10px;
+    transition : all 0.3s ease-in-out;
 }
 
-#page1 .container button{
+#login-page .container a:hover{
+    color : #512da8;
+    font-size: 13px;
+    text-decoration: underline;
+    transform : scale(1.05);
+}
+
+#login-page .container button{
     background-color: #512da8;
     color: white;
-    font-size: 25px;
+    font-size: 15px;
     padding: 10px 45px;
     border: 1px solid transparent;
     border-radius: 10px;
@@ -61,13 +82,13 @@ body{
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-#page1 .container button.hidden{
+#login-page .container button.hidden{
     background-color: transparent;
-    border-color: #fff;
+    border-color: whitesmoke;
 }
 
 .container form{
-    background-color: #fff;
+    background-color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,14 +97,15 @@ body{
     height: 100%;
 }
 
-#page1 .container input{
-    background-color: #eee;
+#login-page .container input{
+    background-color: whitesmoke;
     border: none;
-    margin: 10px 0;
-    padding: 20px 20px;
-    font-size: 20px;
+    margin: 5px 0;
+    padding: 20px 10px;
+    font-size: 15px;
     border-radius: 8px;
-    width: 100%;
+    width: 90%;
+    max-height: 10px;
     outline: none;
     text-align: center;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
@@ -93,76 +115,76 @@ body{
     background-image: url("/img/arobase.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
-    background-size: 20px;
+    background-size: 15px;
 }
 #login-password{
     background-image: url("/img/cadenas-verrouille.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
-    background-size: 20px;
+    background-size: 15px;
 }
 #register-email{
     background-image: url("/img/arobase.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
-    background-size: 20px;
+    background-size: 15px;
 }
 #register-password{
     background-image: url("/img/cadenas-verrouille.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
-    background-size: 20px;
+    background-size: 15px;
 }
 #register-name, #register-firstname{
     background-image: url("/img/nom.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
-    background-size: 20px;
+    background-size: 15px;
 }
 #register-birthdate{
     background-image: url("/img/gateau.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
-    background-size: 30px;
+    background-size: 20px;
 }
 #register-postal{
     background-image: url("/img/emplacement.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
-    background-size: 20px;
+    background-size: 15px;
 }
 #register-pseudo{
     background-image: url("/img/pseudo.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
-    background-size: 20px;
+    background-size: 15px;
 }
 
-#page1 .form-container{
+#login-page .form-container{
     position: absolute;
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
 }
 
-#page1 .sign-in{
+#login-page .sign-in{
     left: 0;
     width: 50%;
     z-index: 2;
 }
 
-#page1 .container.active .sign-in{
+#login-page .container.active .sign-in{
     transform: translateX(100%);
 }
 
-#page1 .sign-up{
+#login-page .sign-up{
     left: 0;
     width: 50%;
     opacity: 0;
     z-index: 1;
 }
 
-#page1 .container.active .sign-up{
+#login-page .container.active .sign-up{
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
@@ -180,11 +202,11 @@ body{
     }
 }
 
-#page1 .social-icons{
+#login-page .social-icons{
     margin: 20px 0;
 }
 
-#page1 .social-icons a{
+#login-page .social-icons a{
     border: 1px solid #ccc;
     border-radius: 20%;
     display: inline-flex;
@@ -195,7 +217,7 @@ body{
     height: 40px;
 }
 
-#page1 .toggle-container{
+#login-page .toggle-container{
     position: absolute;
     top: 0;
     left: 50%;
@@ -207,12 +229,12 @@ body{
     z-index: 1000;
 }
 
-#page1 .container.active .toggle-container{
+#login-page .container.active .toggle-container{
     transform: translateX(-100%);
     border-radius: 0 150px 100px 0;
 }
 
-#page1 .toggle{
+#login-page .toggle{
     background-color: #512da8;
     height: 100%;
     background: linear-gradient(to right, #5c6bc0, #512da8);
@@ -225,11 +247,11 @@ body{
     transition: all 0.6s ease-in-out;
 }
 
-#page1 .container.active .toggle{
+#login-page .container.active .toggle{
     transform: translateX(50%);
 }
 
-#page1 .toggle-panel{
+#login-page .toggle-panel{
     position: absolute;
     width: 50%;
     height: 100%;
@@ -244,19 +266,39 @@ body{
     transition: all 0.6s ease-in-out;
 }
 
-#page1 .toggle-left{
+#login-page .toggle-left{
     transform: translateX(-200%);
 }
 
-#page1 .container.active .toggle-left{
+#login-page .container.active .toggle-left{
     transform: translateX(0);
 }
 
-#page1 .toggle-right{
+#login-page .toggle-right{
     right: 0;
     transform: translateX(0);
 }
 
-#page1 .container.active .toggle-right{
+#login-page .container.active .toggle-right{
     transform: translateX(200%);
+}
+
+#register-role {
+    appearance: none;
+    background-color: #eee;
+    border: none;
+    padding: 15px 0px 0px 40px;; 
+    font-size: 15px;
+    color: gray;
+    border-radius: 8px;
+    width: 90%;
+    height: 40px;
+    line-height: 20px;
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background-image: url("/img/role.png");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 18px;
+    cursor: pointer;
 }
