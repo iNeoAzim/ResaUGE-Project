@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réservations enseignants - Université Eiffel</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="CSS/styleteacher.css">
+=======
+    <link rel="stylesheet" href="../CSS/styleteacher.css">
+>>>>>>> 533b3f2423a023a4c35f5c739bfc83348c05812a
 </head>
 <body id="page0">
 
