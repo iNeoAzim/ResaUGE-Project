@@ -22,15 +22,6 @@ ResaUGE-Project/
 └── ...
 ```
 
-## Installation
-1. Cloner le dépôt :
-   ```bash
-   git clone <repo-url>
-   ```
-2. Placer le dossier sur un serveur local (ex : XAMPP, WAMP, MAMP, Docker...)
-3. Importer la base de données fournie dans le dossier `SQL/` (voir APPBASE)
-4. Accéder à l'application via `http://localhost/ResaUGE-Project/`
-
 ## Technologies utilisées
 - PHP (backend)
 - HTML5, CSS3 (frontend)
