@@ -23,7 +23,7 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
         }
         .sidebar {
             width: 240px;
-            background: #1a237e;
+            background:rgb(29, 37, 126);
             color: #fff;
             display: flex;
             flex-direction: column;
