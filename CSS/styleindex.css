@@ -12,7 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(-45deg, #005e55, #35c8b0, #2f2a85, #27306e);
+    background: linear-gradient(-90deg, #005e55, #35c8b0, #2f2a85, #27306e);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 100vh;
@@ -97,18 +97,36 @@ body{
     height: 100%;
 }
 
-#login-page .container input{
-    background-color: whitesmoke;
-    border: none;
-    margin: 5px 0;
-    padding: 20px 10px;
-    font-size: 15px;
-    border-radius: 8px;
-    width: 90%;
-    max-height: 10px;
-    outline: none;
+#login-page .container input , #register-role{
+    border : 2px solid #e8e8e8;
+    padding : 15px;
+    margin-bottom : 10px;
+    border-radius: 10px;
+    background-color : lightgray;
+    font-size: small;
+    font-weight :bold;
     text-align: center;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    width : 60%;
+}
+
+#login-page .container input:focus , #register-role:focus{
+    outline-color : #512da8;
+    background-color : lightblue;
+    color : black;
+    box-shadow: 5px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="date"]{
+    background-color : lightblue;
+}
+
+#register-role:focus {
+    outline-color : #512da8;
+    background-color : lightblue;
+    color : black;
+    box-shadow : 5px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
 }
 
 #login-email{
@@ -155,6 +173,12 @@ body{
 }
 #register-pseudo{
     background-image: url("/img/pseudo.png");
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 15px;
+}
+#register-role{
+    background-image: url("/img/profil.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;
@@ -283,22 +307,6 @@ body{
     transform: translateX(200%);
 }
 
-#register-role {
-    appearance: none;
-    background-color: #eee;
-    border: none;
-    padding: 15px 0px 0px 40px;; 
-    font-size: 15px;
-    color: gray;
-    border-radius: 8px;
-    width: 90%;
-    height: 40px;
-    line-height: 20px;
-    outline: none;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-    background-image: url("/img/role.png");
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 18px;
-    cursor: pointer;
+#login-page h1{
+    margin-bottom: 20px;
 }

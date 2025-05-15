@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="./CSS/styleindex.css">
-    <title>Modern Login Page</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo_gustaveEiffel.jpg">
+    <title>Gustave Eiffel - Réservation de matériel</title>
 </head>
 
 <body id="login-page">
-
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
                 <h1>Créer un compte</h1>
-                <span>ou utiliser un email pour l'inscription</span>
-                <input type="text" placeholder="Nom" id="register-name">
-                <input type="text" placeholder="Prénom" id="register-firstname">
-                <input type="email" placeholder="Email" id="register-email">
-                <input type="password" placeholder="Mot de passe" id="register-password">
-                <input type="pseudo" placeholder="Pseudo" id="register-pseudo">
-                <input type="Postal" placeholder="Code Postal" id="register-postal">
-                <input type="birthdate" placeholder="Date de naissance" id="register-birthdate">
-                <select name="role" id="register-role">
+                <input type="text" placeholder="Nom" id="register-name" required>
+                <input type="text" placeholder="Prénom" id="register-firstname" required>
+                <input type="email" placeholder="Email" id="register-email" required>
+                <input type="password" placeholder="Mot de passe" id="register-password" required>
+                <input type="pseudo" placeholder="Pseudo" id="register-pseudo" required>
+                <input type="text" placeholder="Code Postal" id="register-postal" pattern="^\d{5}$" title="Entrez un code postal Français à 5chiffres" required>
+                <input type="date" placeholder="Date de naissance" id="register-birthdate" required>
+                <select name="role" id="register-role" required>
                     <option value="student">Etudiant</option>
                     <option value="teacher">Enseignant</option>
                     <option value="agent">Agent</option>
@@ -35,7 +34,6 @@
         <div class="form-container sign-in">
             <form>
                 <h1>Se connecter</h1>
-                <span>ou utiliser le mot de passe </span>
                 <input type="email" placeholder="Email" id="login-email">
                 <input type="password" placeholder="Mot de passe" id="login-password">
                 <a href="#">Mot de passe oublié?</a>

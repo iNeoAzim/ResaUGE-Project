@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réservations étudiants - Université Eiffel</title>
-    <link rel="stylesheet" href="CSS/stylestudent.css">
+    <link rel="stylesheet" href="../CSS/stylestudent.css">
 </head>
 <body id="page0">
 
