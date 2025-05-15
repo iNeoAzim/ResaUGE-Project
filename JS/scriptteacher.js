@@ -6,7 +6,7 @@ cards.forEach(card => {
         card.style.transform = 'scale(1.05)';
     });
     card.addEventListener('mouseleave', () => {
-        card.style.boxShadow = '0 2px 12px rgba(25,118,210,0.08)';
+        card.style.boxShadow = '0 3px 12px rgba(25,118,210,0.08)';
         card.style.transform = 'scale(1)';
     });
 });
