@@ -22,7 +22,7 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
             min-height: 100vh;
         }
         .sidebar {
-            width: 220px;
+            width: 225px;
             background: #1976d2;
             color: #fff;
             display: flex;
