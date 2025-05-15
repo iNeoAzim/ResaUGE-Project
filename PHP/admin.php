@@ -83,14 +83,14 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
             box-shadow: 0 8px 24px rgba(60,60,100,0.15);
         }
         .admin-card img {
-            width: 64px;
-            height: 64px;
+            width: 65px;
+            height: 65px;
             margin-bottom: 18px;
         }
         .admin-card h3 {
             margin: 0 0 10px 0;
             font-size: 1.2em;
-            color: #1a237e;
+            color:rgb(29, 37, 126);
         }
         .admin-card p {
             color: #555;
@@ -102,7 +102,7 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
             left: 0;
             bottom: 0;
             width: 100vw;
-            background: #1a237e;
+            background:rgb(30, 38, 122);
             color: #fff;
             text-align: center;
             padding: 12px 0;
