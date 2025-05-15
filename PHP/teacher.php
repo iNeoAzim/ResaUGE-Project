@@ -115,3 +115,40 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
         }
     </style>
 </head>
+<body>
+    <aside class="sidebar">
+        <h2>Enseignant</h2>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Notifications</a>
+            <a href="#">Réservation</a>
+            <a href="#">Disponibilité</a>
+            <a href="#">Déconnexion</a>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <div class="welcome">Bonjour, <?php echo $username; ?> !</div>
+        <div class="subtitle">Espace enseignant</div>
+        <div class="teacher-cards">
+            <div class="teacher-card">
+                <img src="/img/emplacement.png" alt="Réserver une salle">
+                <h3>Réserver une salle</h3>
+                <p>Consultez la disponibilité des salles et effectuez vos réservations en quelques clics.</p>
+            </div>
+            <div class="teacher-card">
+                <img src="/img/cadenas-verrouille.png" alt="Réserver du matériel">
+                <h3>Réserver du matériel</h3>
+                <p>Réservez le matériel pédagogique nécessaire pour vos cours ou événements.</p>
+            </div>
+            <div class="teacher-card">
+                <img src="/img/nom.png" alt="Informations personnelles">
+                <h3>Informations personnelles</h3>
+                <p>Gérez vos informations, consultez vos réservations et modifiez vos disponibilités.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy;2025 Université Eiffel. Tous droits réservés.
+    </footer>
+</body>
+</html>
