@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Supposons que le nom d'utilisateur est stocké dans $_SESSION['username']
+// Supposons que le nom d'utilisateur est stocké dans $_SESSION['username']//
 $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Enseignant';
 ?>
 <!DOCTYPE html>

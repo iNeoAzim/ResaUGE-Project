@@ -1,4 +1,4 @@
-// Animation sur les cartes teacher
+// Animation sur les cartes teacher//
 const cards = document.querySelectorAll('.teacher-card');
 cards.forEach(card => {
     card.addEventListener('mouseenter', () => {
@@ -11,7 +11,7 @@ cards.forEach(card => {
     });
 });
 
-// Message de bienvenue dynamique
+// Message de bienvenue dynamique//
 const welcome = document.querySelector('.welcome');
 if (welcome) {
     welcome.style.opacity = 0;
@@ -21,7 +21,7 @@ if (welcome) {
     }, 300);
 }
 
-// Confirmation lors du clic sur Déconnexion
+// Confirmation lors du clic sur Déconnexion//
 const logoutLink = Array.from(document.querySelectorAll('nav a')).find(a => a.textContent.includes('Déconnexion'));
 if (logoutLink) {
     logoutLink.addEventListener('click', function(e) {
@@ -31,7 +31,7 @@ if (logoutLink) {
     });
 }
 
-// Accessibilité : navigation clavier sur la sidebar
+// Accessibilité : navigation clavier sur la sidebar //
 const sidebarLinks = document.querySelectorAll('.sidebar nav a');
 sidebarLinks.forEach(link => {
     link.addEventListener('focus', () => link.style.background = '#1565c0');

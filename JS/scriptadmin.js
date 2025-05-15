@@ -1,4 +1,4 @@
-// Animation sur les cartes admin
+// Animation sur les cartes admin//
 const cards = document.querySelectorAll('.admin-card');
 cards.forEach(card => {
     card.addEventListener('mouseenter', () => {
@@ -11,7 +11,7 @@ cards.forEach(card => {
     });
 });
 
-// Message de bienvenue dynamique (exemple d'effet)
+// Message de bienvenue dynamique (exemple d'effet)//
 const welcome = document.querySelector('.welcome');
 if (welcome) {
     welcome.style.opacity = 0;
@@ -20,8 +20,8 @@ if (welcome) {
         welcome.style.opacity = 1;
     }, 300);
 }
-
-// Confirmation lors du clic sur Déconnexion
+//
+// Confirmation lors du clic sur Déconnexion//
 const logoutLink = Array.from(document.querySelectorAll('nav a')).find(a => a.textContent.includes('Déconnexion'));
 if (logoutLink) {
     logoutLink.addEventListener('click', function(e) {
@@ -31,7 +31,7 @@ if (logoutLink) {
     });
 }
 
-// Accessibilité : navigation clavier sur la sidebar
+// Accessibilité : navigation clavier sur la sidebar//
 const sidebarLinks = document.querySelectorAll('.sidebar nav a');
 sidebarLinks.forEach(link => {
     link.addEventListener('focus', () => link.style.background = '#283593');
