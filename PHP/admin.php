@@ -16,7 +16,7 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
     <style>
         body {
             font-family: 'Montserrat', Arial, sans-serif;
-            background: #f4f6fb;
+            background:rgb(242, 245, 250);
             margin: 0;
             display: flex;
             min-height: 100vh;
