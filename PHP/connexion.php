@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'reservation';
-$user = 'root';        // à adapter selon ton serveur
-$pass = '';            // vide si tu es en local (MAMP/XAMPP)
+$user = 'root';    
+$pass = '';         
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
