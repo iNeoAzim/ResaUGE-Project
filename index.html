@@ -13,14 +13,14 @@
     <div class="container" id="container">
         <div class="form-container sign-up">
             <div class="register-title"><h1>Créer un compte</h1></div>
-            <form action="./PHP/register.php" method="POST">
-                <input type="text" placeholder="Nom" id="register-name" required> 
-                <input type="text" placeholder="Prénom" id="register-firstname" required>
-                <input type="email" placeholder="Email" id="register-email" required>
-                <input type="password" placeholder="Mot de passe" id="register-password" required>
-                <input type="pseudo" placeholder="Pseudo" id="register-pseudo" required>
-                <input type="text" placeholder="Code Postal" id="register-postal" pattern="^\d{5}$" title="Entrez un code postal Français à 5chiffres" required>
-                <input type="date" placeholder="Date de naissance" id="register-birthdate" required>
+            <form action="PHP/register.php" method="POST">
+                <input type="text" name="nom" placeholder="Nom" id="register-name" required> 
+                <input type="text" name="prenom" placeholder="Prénom" id="register-firstname" required>
+                <input type="email" name="email" placeholder="Email" id="register-email" required>
+                <input type="password" name="password" placeholder="Mot de passe" id="register-password" required>
+                <input type="text" name="pseudo" placeholder="Pseudo" id="register-pseudo" required>
+                <input type="text" name="postal" placeholder="Code Postal" id="register-postal" pattern="^\d{5}$" title="Entrez un code postal Français à 5chiffres" required>
+                <input type="date" name="birthdate" placeholder="Date de naissance" id="register-birthdate" required>
                 <select name="role" id="register-role" required>
                     <option value="student">Etudiant</option>
                     <option value="teacher">Enseignant</option>
@@ -31,12 +31,12 @@
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="./PHP/login.php" method="POST">
+            <form action="PHP/login.php" method="POST">
                 <h1>Se connecter</h1>
-                <input type="email" placeholder="Email" id="login-email">
-                <input type="password" placeholder="Mot de passe" id="login-password">
+                <input type="email" name="email" placeholder="Email" id="login-email" required>
+                <input type="password" name="password" placeholder="Mot de passe" id="login-password" required>
                 <a href="#">Mot de passe oublié?</a>
-                <button>Se connecter</button> <link rel="stylesheet" href="./PHP/student.php">
+                <button>Se connecter</button>
             </form>
         </div>
         <div class="toggle-container">
