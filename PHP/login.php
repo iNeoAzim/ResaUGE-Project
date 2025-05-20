@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$email]);
     $user = $stmt->fetch();
 
-    if ($user && $mot_de_passe === $user['mot_de_passe']) { // pas sécurisé (on verra le hash plus tard)
+    if ($user && $mot_de_passe === $user['mot_de_passe']) {
         $_SESSION['utilisateur'] = $user;
         header('Location: dashboard.php');
         exit();
