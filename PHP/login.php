@@ -1,52 +1,29 @@
-<?php 
-require 'base.php';
-
+<?php
 session_start();
+require 'connexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    
-    try {
-        $stmt = $pdo->prepare("SELECT * FROM Utilisateurs WHERE email = ?");
-        $stmt->execute([$email]);
-        $user = $stmt->fetch();
-        
-        if ($user && password_verify($password, $user['password'])) {
-            if ($user['statut'] == 'refused') {
-                echo "<script>alert('Accès refusé par l\'administrateur');window.location.href='../index.html';</script>";
-                exit;
-            } elseif ($user['statut'] == 'pending') {
-                echo "<script>alert('Votre compte est en cours de validation.');window.location.href='../index.html';</script>";
-                exit;
-            } else {
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $user['pseudo'];
-                $_SESSION['role'] = $user['role'];
-                
-                switch ($user['role']) {
-                    case 'admin':
-                        header('Location: admin.php');
-                        break;
-                    case 'student':
-                        header('Location: student.php');
-                        break;
-                    case 'teacher':
-                        header('Location: teacher.php');
-                        break;
-                    case 'agent':
-                        header('Location: agent.php');
-                        break;
-                    default:
-                        header('Location: ../index.html');
-                }
-                exit;
-            }
-        } else {
-            echo "<script>alert('Email ou mot de passe incorrect');window.location.href='../index.html';</script>";
-        }
-    } catch (PDOException $e) {
-        echo "<script>alert('Erreur de connexion: " . $e->getMessage() . "');window.location.href='../index.html';</script>";
+    $mot_de_passe = $_POST['mot_de_passe'];
+
+    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch();
+
+    if ($user && $mot_de_passe === $user['mot_de_passe']) { // pas sécurisé (on verra le hash plus tard)
+        $_SESSION['utilisateur'] = $user;
+        header('Location: dashboard.php');
+        exit();
+    } else {
+        $erreur = "Email ou mot de passe incorrect";
     }
 }
 ?>
+
+<form method="post">
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="password" name="mot_de_passe" placeholder="Mot de passe" required><br>
+    <button type="submit">Se connecter</button>
+</form>
+
+<?php if (isset($erreur)) echo "<p style='color:red;'>$erreur</p>"; ?>
