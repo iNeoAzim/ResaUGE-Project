@@ -127,13 +127,13 @@ body{
 }
 
 #login-email{
-    background-image: url("/img/arobase.png");
+    background-image: url("../img/arobase.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;
 }
 #login-password{
-    background-image: url("/img/cadenas-verrouille.png");
+    background-image: url("../img/cadenas-verrouille.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;
@@ -157,13 +157,13 @@ body{
     background-size: 15px;
 }
 #register-birthdate{
-    background-image: url("/img/cake.png");
+    background-image: url("../img/cake.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;
 }
 #register-postal{
-    background-image: url("/img/emplacement.png");
+    background-image: url("../img/emplacement.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;

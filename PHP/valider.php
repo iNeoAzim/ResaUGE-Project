@@ -17,3 +17,4 @@ if (in array($action, ['accept' ,'refuse'])){
 
 header('Location : validation_admin.php');
 exit;
+?>
