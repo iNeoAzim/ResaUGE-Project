@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'resauge';
+$db = 'ResaUGE-Project';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
