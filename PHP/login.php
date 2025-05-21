@@ -9,7 +9,6 @@
     <title>Modern Login Page</title>
 </head>
 
-
 <?php
 session_start();
 require '../PHP/connexion.php';
