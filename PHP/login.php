@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container" id="container">
         <div class="form-container sign-up">
             <div class="register-title"><h1>Créer un compte</h1></div>
-            <form action="PHP/register.php" method="POST">
+            <form action="register.php" method="POST">
                 <input type="text" name="nom" placeholder="Nom" id="register-name" required> 
                 <input type="text" name="prenom" placeholder="Prénom" id="register-firstname" required>
                 <input type="email" name="email" placeholder="Email" id="register-email" required>
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="PHP/login.php" method="POST">
+            <form action="login.php" method="POST">
                 <h1>Se connecter</h1>
                 <input type="email" name="email" placeholder="Email" id="login-email" required>
                 <input type="password" name="password" placeholder="Mot de passe" id="login-password" required>
