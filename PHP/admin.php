@@ -121,7 +121,7 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
         <nav>
             <a href="#">Accueil</a>
             <a href="#">Tableau de bord</a>
-            <a href="validation_admin.php">Validation des utilisateurs</a>
+            <a href="validation_compte.php">Validation des utilisateurs</a>
             <a href="#">Utilisateurs</a>
             <a href="#">Suivi</a>
             <a href="#">Objets & Salles</a>

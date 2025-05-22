@@ -240,40 +240,40 @@ function togglePasswords() {
 
 // Fonctions pour la modal de confirmation
 function openModal(action, userId, prenom, nom) {
+    const modal = document.getElementById('confirmModal');
     const modalTitle = document.getElementById('modalTitle');
     const modalBody = document.getElementById('modalBody');
-    const confirmButton = document.getElementById('confirmButton');
     const modalUserId = document.getElementById('modalUserId');
     const modalAction = document.getElementById('modalAction');
-    
-    // Configurer la modal selon l'action
+    const confirmButton = document.getElementById('confirmButton');
+
+    modalUserId.value = userId;
+    modalAction.value = action;
+
     if (action === 'validate') {
-        modalTitle.textContent = 'Valider ce compte ?';
-        modalBody.innerHTML = `Êtes-vous sûr de vouloir valider le compte de <strong>${prenom} ${nom}</strong> ?`;
+        modalTitle.textContent = 'Valider le compte';
+        modalBody.textContent = `Êtes-vous sûr de vouloir valider le compte de ${prenom} ${nom} ?`;
         confirmButton.textContent = 'Valider';
         confirmButton.className = 'btn-validate';
-    } else {
-        modalTitle.textContent = 'Rejeter ce compte ?';
-        modalBody.innerHTML = `Êtes-vous sûr de vouloir rejeter le compte de <strong>${prenom} ${nom}</strong> ?`;
+    } else if (action === 'reject') {
+        modalTitle.textContent = 'Rejeter le compte';
+        modalBody.textContent = `Êtes-vous sûr de vouloir rejeter le compte de ${prenom} ${nom} ?`;
         confirmButton.textContent = 'Rejeter';
         confirmButton.className = 'btn-reject';
     }
-    
-    // Définir les valeurs du formulaire
-    modalUserId.value = userId;
-    modalAction.value = action;
-    
-    // Afficher la modal
-    confirmModal.style.display = 'flex';
+
+    modal.style.display = 'flex';
 }
 
 function closeModal() {
-    confirmModal.style.display = 'none';
+    const modal = document.getElementById('confirmModal');
+    modal.style.display = 'none';
 }
 
 // Fermer la modal si on clique en dehors
 window.onclick = function(event) {
-    if (event.target === confirmModal) {
+    const modal = document.getElementById('confirmModal');
+    if (event.target === modal) {
         closeModal();
     }
-};
+}
