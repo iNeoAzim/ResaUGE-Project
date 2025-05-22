@@ -14,6 +14,7 @@
         <a href="#">Notifications</a>
         <a href="#">Réservation</a>
         <a href="#">Disponibilité</a>
+        <a href="logout.php">Déconnexion</a>
     </nav>
 
     <div class="main-content">
@@ -71,4 +72,4 @@ switch ($user['role']) {
         break;
 }
 ?>
-<a href="logout.php">Déconnexion</a>
+

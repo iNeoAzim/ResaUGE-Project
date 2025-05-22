@@ -122,7 +122,7 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
             <a href="#">Notifications</a>
             <a href="#">Réservation</a>
             <a href="#">Disponibilité</a>
-            <a href="#">Déconnexion</a>
+            <a href="logout.php">Déconnexion</a>
         </nav>
     </aside>
     <main class="main-content">
@@ -151,3 +151,4 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
     </footer>
 </body>
 </html>
+
