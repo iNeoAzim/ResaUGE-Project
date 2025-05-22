@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-    <script src="./JS/script.js"></script>
+    <script src="../JS/script.js"></script>
 </body>
 </html>
 

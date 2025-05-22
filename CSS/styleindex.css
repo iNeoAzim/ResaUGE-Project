@@ -139,19 +139,19 @@ body{
     background-size: 15px;
 }
 #register-email{
-    background-image: url("/img/arobase.png");
+    background-image: url("../img/arobase.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;
 }
 #register-password{
-    background-image: url("/img/cadenas-verrouille.png");
+    background-image: url("../img/cadenas-verrouille.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;
 }
 #register-name, #register-firstname{
-    background-image: url("/img/nom.png");
+    background-image: url("../img/nom.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;
@@ -169,13 +169,13 @@ body{
     background-size: 15px;
 }
 #register-pseudo{
-    background-image: url("/img/pseudo.png");
+    background-image: url("../img/pseudo.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;
 }
 #register-role{
-    background-image: url("/img/profil.png");
+    background-image: url("../img/profil.png");
     background-repeat: no-repeat;
     background-position: 0.5em center;
     background-size: 15px;
