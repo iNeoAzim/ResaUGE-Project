@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'reservation';
+$dbname = 'resauge';
 $user = 'root';    
 $pass = '';         
 

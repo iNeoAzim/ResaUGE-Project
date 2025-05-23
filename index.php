@@ -7,24 +7,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && isset($_P
     $email = $_POST['email'];
     $password = $_POST['password'];
     
+    // Debug
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    
     $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
     
+    // Debug - Afficher les informations (de manière sécurisée)
+    error_log("Email tenté: " . $email);
+    error_log("Utilisateur trouvé: " . ($user ? "Oui" : "Non"));
+    if ($user) {
+        error_log("Hash stocké: " . $user['password']);
+        error_log("Vérification mot de passe: " . (password_verify($password, $user['password']) ? "Réussi" : "Échoué"));
+    }
+    
     if ($user && password_verify($password, $user['password'])) {
-        if ($user['is_validated'] == 0) {
+        if ($user['valide'] == 0) {
             $_SESSION['error'] = 'account_pending';
             header('Location: index.php');
             exit();
         }
         
-        $_SESSION['utilisateur'] = [
+        $_SESSION['user'] = [
             'id' => $user['id'],
             'nom' => $user['nom'],
             'prenom' => $user['prenom'],
             'email' => $user['email'],
             'role' => $user['role']
         ];
+        
+        $_SESSION['role'] = $user['role'];
         
         switch ($user['role']) {
             case 'admin':
@@ -51,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && isset($_P
     }
 }
 
-if (isset($_SESSION['utilisateur'])) {
-    $role = $_SESSION['utilisateur']['role'];
+if (isset($_SESSION['user'])) {
+    $role = $_SESSION['user']['role'];
     switch ($role) {
         case 'admin':
             header('Location: PHP/admin.php');

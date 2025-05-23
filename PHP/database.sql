@@ -15,9 +15,9 @@ CREATE TABLE IF NOT EXISTS utilisateur (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Création du compte admin par défaut
--- Mot de passe par défaut : Admin123!
+-- Mot de passe : Admin123!
 INSERT INTO utilisateur (nom, prenom, email, password, role, valide) 
-VALUES ('Admin', 'ResaUGE', 'admin@resauge.fr', '$2y$10$YourHashedPasswordHere', 'admin', 1)
+VALUES ('Admin', 'ResaUGE', 'admin@resauge.fr', '$2y$10$8zUUpxqyXGF0H0uGMvs9.eKHrPGhXOyh0UF4jx1NZhF9J4kBg0Ife', 'admin', 1)
 ON DUPLICATE KEY UPDATE id=id;
 
 -- Structure de la table salle
