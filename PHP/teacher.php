@@ -1,46 +1,86 @@
 <?php
 session_start();
-if (!isset($_SESSION['utilisateur']) || $_SESSION['utilisateur']['role'] !== 'teacher') {
-    header('Location: ../index.html');
+require_once 'config.php';
+
+// Vérifier si l'utilisateur est connecté et est un enseignant
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'teacher') {
+    header('Location: ../index.php');
     exit();
 }
-$user = $_SESSION['utilisateur'];
+
+// Récupérer les informations de l'utilisateur depuis la session
+$user = $_SESSION['user'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Enseignant - ResaUGE</title>
+    <title>Réservations enseignants - Université Eiffel</title>
     <link rel="stylesheet" href="../CSS/stylestudent.css">
+    <style>
+        .course-card {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        .course-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+        .logout-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: #dc3545;
+            border-radius: 4px;
+        }
+        .logout-link:hover {
+            background-color: #c82333;
+        }
+    </style>
 </head>
 <body id="page0">
+    <a href="logout.php" class="logout-link">Déconnexion</a>
+   
     <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Mes Réservations</a>
-        <a href="#">Réserver une Salle</a>
-        <a href="#">Planning</a>
-        <a href="logout.php">Déconnexion</a>
+        <a href="teacher.php">Accueil</a>
+        <a href="#">Notifications</a>
+        <a href="#">Réservation</a>
+        <a href="#">Disponibilité</a>
     </nav>
 
     <div class="main-content">
-        <h1>Bonjour, <?php echo htmlspecialchars($user['prenom'] . ' ' . $user['nom']); ?> !</h1>
-        <h2>Espace Enseignant</h2>
+        <h1>Bonjour <?php echo htmlspecialchars($user['prenom'] . ' ' . $user['nom']); ?> !</h1>
+        <h2>Réserver</h2>
         <div class="course-cards">
             <div class="course-card">
-                <img src="../img/emplacement.png" alt="Réserver une salle">
-                <h3>Réserver une Salle</h3>
-                <p>Réservez une salle pour vos cours et activités pédagogiques.</p>
+                <a href="reservation_salle.php">
+                    <img src="../images/salle.png" alt="Réservation de salle">
+                    <h3>Salle</h3>
+                    <p>Réserver une salle pour vos cours et activités</p>
+                </a>
             </div>
             <div class="course-card">
-                <img src="../img/cadenas-verrouille.png" alt="Mes réservations">
-                <h3>Mes Réservations</h3>
-                <p>Consultez et gérez vos réservations en cours.</p>
+                <a href="reservation_materiel.php">
+                    <img src="../images/materiel.png" alt="Réservation de matériel">
+                    <h3>Matériel</h3>
+                    <p>Réserver du matériel pour vos enseignements</p>
+                </a>
             </div>
             <div class="course-card">
-                <img src="../img/profil.png" alt="Planning">
-                <h3>Planning</h3>
-                <p>Consultez le planning des salles disponibles.</p>
+                <a href="#">
+                    <img src="../images/info.png" alt="Informations">
+                    <h3>Information</h3>
+                    <p>Consulter les informations importantes</p>
+                </a>
             </div>
         </div>
     </div>
@@ -48,6 +88,7 @@ $user = $_SESSION['utilisateur'];
     <footer>
         <p>&copy;2025 Université Eiffel. Tous droits réservés.</p>
     </footer>
+
 </body>
 </html>
 

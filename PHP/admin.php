@@ -125,6 +125,7 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
             <a href="#">Utilisateurs</a>
             <a href="#">Suivi</a>
             <a href="#">Objets & Salles</a>
+            <a href="gestion_reservations.php">Gestion des réservations</a>
             <a href="logout.php">Déconnexion</a>
         </nav>
     </aside>
@@ -151,6 +152,7 @@ $username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'
                 <img src="/img/nom.png" alt="Suivi des réservations">
                 <h3>Suivi des réservations</h3>
                 <p>Visualisez et gérez toutes les réservations en cours ou passées. Exportez les rapports facilement.</p>
+                <a href="gestion_reservations.php" class="btn">Gérer les réservations</a>
             </div>
         </div>
     </main>

@@ -10,35 +10,35 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['user']['role'], ['student'
 
 // Traitement du formulaire de réservation
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $salle_id = $_POST['salle_id'];
+    $materiel_id = $_POST['materiel_id'];
     $date_debut = $_POST['date_debut'];
     $date_fin = $_POST['date_fin'];
     $motif = $_POST['motif'];
     $utilisateur_id = $_SESSION['user']['id'];
 
-    // Vérifier si la salle est disponible pour cette période
-    $stmt = $conn->prepare("SELECT * FROM reservation WHERE salle_id = ? AND 
+    // Vérifier si le matériel est disponible pour cette période
+    $stmt = $conn->prepare("SELECT * FROM reservation WHERE materiel_id = ? AND 
         ((date_debut BETWEEN ? AND ?) OR (date_fin BETWEEN ? AND ?)) AND 
         statut = 'validee'");
-    $stmt->execute([$salle_id, $date_debut, $date_fin, $date_debut, $date_fin]);
+    $stmt->execute([$materiel_id, $date_debut, $date_fin, $date_debut, $date_fin]);
     
     if ($stmt->rowCount() === 0) {
         // Insérer la réservation
-        $stmt = $conn->prepare("INSERT INTO reservation (utilisateur_id, salle_id, date_debut, date_fin, motif) 
+        $stmt = $conn->prepare("INSERT INTO reservation (utilisateur_id, materiel_id, date_debut, date_fin, motif) 
             VALUES (?, ?, ?, ?, ?)");
-        if ($stmt->execute([$utilisateur_id, $salle_id, $date_debut, $date_fin, $motif])) {
+        if ($stmt->execute([$utilisateur_id, $materiel_id, $date_debut, $date_fin, $motif])) {
             $success = "Votre demande de réservation a été enregistrée et est en attente de validation.";
         } else {
             $error = "Une erreur est survenue lors de la réservation.";
         }
     } else {
-        $error = "La salle n'est pas disponible pour cette période.";
+        $error = "Le matériel n'est pas disponible pour cette période.";
     }
 }
 
-// Récupérer la liste des salles disponibles
-$stmt = $conn->query("SELECT * FROM salle WHERE disponible = 1");
-$salles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Récupérer la liste du matériel disponible
+$stmt = $conn->query("SELECT * FROM materiel WHERE disponible = 1");
+$materiels = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +46,7 @@ $salles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation de salle - Université Eiffel</title>
+    <title>Réservation de matériel - Université Eiffel</title>
     <link rel="stylesheet" href="../CSS/stylestudent.css">
     <style>
         .reservation-form {
@@ -87,14 +87,14 @@ $salles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <nav>
-        <a href="<?php echo $_SESSION['user']['role'] === 'teacher' ? 'teacher.php' : 'student.php'; ?>">Accueil</a>
+        <a href="student.php">Accueil</a>
         <a href="#">Notifications</a>
         <a href="#">Disponibilité</a>
         <a href="logout.php">Déconnexion</a>
     </nav>
 
     <div class="main-content">
-        <h1>Réservation de salle</h1>
+        <h1>Réservation de matériel</h1>
         
         <?php if (isset($success)): ?>
             <div class="alert alert-success"><?php echo $success; ?></div>
@@ -107,12 +107,12 @@ $salles = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="reservation-form">
             <form method="POST" action="">
                 <div class="form-group">
-                    <label for="salle_id">Salle :</label>
-                    <select name="salle_id" id="salle_id" required>
-                        <option value="">Sélectionnez une salle</option>
-                        <?php foreach ($salles as $salle): ?>
-                            <option value="<?php echo $salle['id']; ?>">
-                                <?php echo htmlspecialchars($salle['nom'] . ' (Capacité: ' . $salle['capacite'] . ' personnes)'); ?>
+                    <label for="materiel_id">Matériel :</label>
+                    <select name="materiel_id" id="materiel_id" required>
+                        <option value="">Sélectionnez un matériel</option>
+                        <?php foreach ($materiels as $materiel): ?>
+                            <option value="<?php echo $materiel['id']; ?>">
+                                <?php echo htmlspecialchars($materiel['nom'] . ' - ' . $materiel['description']); ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -142,4 +142,4 @@ $salles = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>&copy; 2025 Université Eiffel. Tous droits réservés.</p>
     </footer>
 </body>
-</html>
+</html> 

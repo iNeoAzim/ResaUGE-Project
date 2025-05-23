@@ -87,7 +87,7 @@ $salles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <nav>
-        <a href="<?php echo $_SESSION['user']['role'] === 'teacher' ? 'teacher.php' : 'student.php'; ?>">Accueil</a>
+        <a href="student.php">Accueil</a>
         <a href="#">Notifications</a>
         <a href="#">Disponibilité</a>
         <a href="logout.php">Déconnexion</a>
@@ -142,4 +142,4 @@ $salles = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>&copy; 2025 Université Eiffel. Tous droits réservés.</p>
     </footer>
 </body>
-</html>
+</html> 
